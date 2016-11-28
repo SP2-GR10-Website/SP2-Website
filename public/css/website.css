@@ -1,0 +1,173 @@
+ a{
+ 	text-decoration: none;
+ 	color: black;
+ }
+  a:hover{
+ 	text-decoration: none;
+ 	color: black;
+ }
+ .homeWell{
+	transition: background-color 0.2s ease-in 0s;
+ }
+ .homeWell:hover{
+	background-color: rgb(219, 219, 219);
+ }
+ .customContainer{
+ 	padding: 0;
+ 	overflow-x: hidden;
+ }
+ .zoekBtn{
+  	margin-top: 15px;
+ }
+ .errorlink{
+ 	color: #198CFF;
+ }
+  .errorlink:hover{
+  	color: #198CFF;
+ 	text-decoration: underline;
+ }
+ .errorsmiley{
+ 	font-family: Tahoma;
+ 	font-size: 20vh;
+ }
+ .errormessage{
+ 	font-size: 20px;
+ }
+ .linkerdeel{
+ 	float: left;
+ 	padding-left: 3vw;
+ 	width: 20vw;
+ }
+.rechterdeel{
+	height: 100%;
+	padding: 0vw 3vw 0vw 3vw;
+	float: left;
+	width: calc(79.5vw - 17px);
+}
+#treinen{
+	width: 60vw;
+	margin-left: auto;
+	margin-right: auto;
+}
+.trein{
+	margin-bottom: 3vh;
+}
+ info{
+	font-family: Tahoma;
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+.treinInfo{
+	display: table;
+	height: 5vh;
+	width: 60vw;
+	background-color: rgb(226, 226, 226);
+}
+.infodeel{
+	display: table-cell;
+	vertical-align: middle;
+	width: 40%;
+}
+.stationdeel{
+	display: table-cell;
+	vertical-align: middle;
+}
+.pijltje{
+	margin: 0px 20px 0px 20px;
+}
+.nummerContainer{
+	display: table-cell;
+	vertical-align: middle;
+	color: white;
+	text-align: center;
+	width: 7vw;
+	height: 5vh;
+	box-shadow: inset -2px 0px 0px 0px white;
+	font-size: 2vh;
+}
+.begin-eind{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 17vw;
+	font-size: 1.5vh;
+	box-shadow: inset -2px 0px 0px 0px white;
+}
+.stationdeel{
+	text-align: center;
+}
+
+.tussenhalte{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 2vh;
+	width: 10vw;
+}
+.perron{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 1.6vh;
+	width: 10vw;
+}
+.aankomstTijd{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 1.7vh;
+	width: 7vw;
+}
+.vertrekTijd{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 1.7vh;
+	width: 7vw;
+}
+.meerStations{
+	display: table-cell;
+	vertical-align: middle;
+	cursor: pointer;
+	padding: 0 0.5vw 0 0.5vw;
+}
+.meerStationsIMG{
+	width: 1vw;
+	height: 1vw;
+	
+	background-image: url('../images/expand.png');
+	background-size: 1vw 1vw;
+}
+.treinStationsCont{
+	display: none;
+}
+.treinStations{
+	display: table;
+	text-align:center;
+}
+.treinStation{
+	width: 36vw;
+	margin: 2px 0px 2px 24vw;
+	display: block;
+	min-height: 5vh;
+	background-color: rgb(226, 226, 226);
+}
+#extraTreinenBtn{
+	cursor: pointer;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	line-height: 4vh;
+	width: 30vw;
+	height: 4vh;
+	background-color: rgb(134, 192, 242);
+	font-family: Helvetica;
+	font-size: 2vh;
+	color: white;
+	transition: all 0.1s ease-in 0s;
+	border-radius: 5px;
+	box-shadow: 30px;
+	position: relative;
+}
+#extraTreinenBtn:hover{
+	color: white;
+	background-color: rgb(81, 165, 239);
+}

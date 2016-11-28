@@ -1,0 +1,1 @@
+<div class="modal-footer"><p class="text-center">Groep 10 - all rights reserved</p></div>
