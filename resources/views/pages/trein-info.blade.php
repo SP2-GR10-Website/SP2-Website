@@ -5,24 +5,24 @@
 @section('activePageTrein', 'active')
 
 @section('content')
+<div class="container-fluid" id="trein-info">
   <div class="row">
-    <div class="linkerdeel col-lg-3">
-      <div class="col-lg-10 col-lg-offset-1">
-        {!! Form::open(array('route' => 'trein-info.zoek')) !!}
-            {{Form::label('treinId', 'Trein ID:')}}
-            {{Form::input('text', 'treinId', null, array('class' => 'form-control'))}}
-
-             {{Form::submit('Zoek', array('class' => 'btn btn-success zoekBtn btn-block'))}}
-        {!! Form::close() !!}
+    <div class="linkerdeel">
+      <div>
+        <form>
+            <label for="name">Trein ID:</label>
+            <input class="form-control" type="text" id="treinId">
+        </form>
+        <div class="btn btn-success zoekBtn btn-block" onclick="getTrein()">Zoek</div>
       </div>
     </div>
 
-    <div class="rechterdeel col-lg-9">
-      {!!$data or ""!!}
+    <div class="rechterdeel" id="rechterdeelId">
     </div>
   </div>
+</div>
 @endsection
 
 @section('scripts')
-  <script src="/js/website.min.js"></script>
+  <script src="/js/pages/trein-info.js"></script>
 @endsection

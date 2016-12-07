@@ -5,25 +5,30 @@
 @section('activePageStation', 'active')
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" id="station-info">
   <div class="row">
     <div class="linkerdeel">
-      <div class="">
-        <form>
+      <div>
+         <form>
             <label for="name">Station:</label>
-            <input class="form-control" name="name" type="text" id="name">
+            <select id="name"></select>
             <br>
             <label for="treinTijd">Tijdstip:</label>
-            <input class="form-control" name="treinTijd" type="datetime-local" id="treinTijd" value="2016-11-28T11:42">
+            <input class="form-control" name="treinTijd" type="datetime-local" id="treinTijd">
         </form>
-        <div class="btn btn-success zoekBtn btn-block" onclick="getTreinen(0)">Zoek</div>
+       <div class="btn btn-success zoekBtn btn-block" onclick="getStation('initialise')">Zoek</div>
       </div>
     </div>
-
-    <div id="rechterdeelId" class="rechterdeel">
+    <div class="rechterdeel" id="rechterdeelId">
+      <div id="treinen">
+        
+      </div>
+      <div id="extraTreinenBtnCont"></div>
     </div>
-
-    <!---->
   </div>
 </div>
+@endsection
+
+@section('scripts')
+  <script src="/js/pages/station-info.js"></script>
 @endsection

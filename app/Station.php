@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Station extends Model
 {
-	protected $fillable = array('stationId', 'naam', 'stad', 'active');
+	protected $fillable = array('naam','active');
     protected $table = 'STATIONS';
-    protected $primaryKey = 'stationId';
+    protected $primaryKey = 'id';
     public $timestamps = false;
+
 }

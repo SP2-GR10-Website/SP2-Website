@@ -9,11 +9,11 @@ use App\Http\Controllers\Controller;
 use App\Station;
 
 class InfoController extends Controller {
-	public function getRouteInfo(){
+	public function getRouteInfo(Request $request){
 		$data="";
-		$stepOn = htmlspecialchars($_POST['stepOn']);
-		$stepOff = htmlspecialchars($_POST['stepOff']);
-		$date = htmlspecialchars($_POST['treinTijd']);
+		$stepOn = $request->stepOn;
+		$stepOff = $request->stepOff;
+		$date = $request->treinTijd;
 		$date.=" GMT";
 		$timestamp = strtotime($date);
 		$url = sprintf("https://traintracks.online/api/Route/%s/%s/%s", $stepOn, $stepOff,$timestamp);
@@ -231,39 +231,92 @@ class InfoController extends Controller {
 		return view('pages.route-info')->with('data', $data);
 	}
 
-	public function getTreinInfo(){
-		$data = "";
-		$id = htmlspecialchars($_POST['treinId']);
-		$url = sprintf("https://traintracks.online/api/train/%s", $id);
-		$result = json_decode(file_get_contents($url));
+public function getTreinInfo(Request $request){
+		$treinId = $request->treinId;
+		$url2 = sprintf("https://traintracks.online/api/train/%s", $treinId);
+		$treinJSON = json_decode(file_get_contents($url2));
 
-		$data = $data . sprintf("Het id van uw trein: %s",$result->Number);
+		$data = 
+		'<div class="trein">
+			<div class="treinInfo">
+				<div class="infodeel">
+					<info class="nummerContainer">
+						<info class="nummer">' . $treinId . '</info>
+					</info>
+					<div class="begin-eind">
+		            	<info class="begin">' . explode('/', $treinJSON->DepartureStation)[0] . '</info><br>
+		            	<div class="glyphicon glyphicon-arrow-down pijltje"></div><br>
+		            	<info class="eind">' .  explode('/', $treinJSON->TerminusStation)[0] . '</info>
+	          		</div>
+          		</div>';
 
-		$data = $data . "<ul>";
-		$data = $data . sprintf("<li><b>Van: </b> %s <br /><b>Naar:</b> %s</li>",$result->DepartureStation,$result->TerminusStation);
+		for($i = 0 ; $i < $treinJSON->Stops->Count ; $i++){
+			$halte = $treinJSON->Stops->Stations[$i];
 
-		
-		foreach ($result->Stops as $stops) {
-			$countArray = count ($stops);
-			$countArray=($countArray-1);
+			$echtVertrek = $halte->Time->ActualDeparture;
+			$geplandVertrek = $halte->Time->Departure;
+			$geplandAankomen = $halte->Time->Arrival;
+			$echtAankomen= $halte->Time->ActualArrival;
 
-			$data = $data . "<table class='testTable'>";
-			for($i = 0 ;$i<=($countArray);$i++){
+
+			$vertrekMinuut1 = substr($geplandVertrek, 14,2);
+			$vertrekMinuut2 = substr($echtVertrek, 14,2);
+			$vertrekUur1 = substr($geplandVertrek, 11,2);
+			$vertrekUur2 = substr($echtVertrek, 11,2);
+
+
+			$aankomstMinuut1 = substr($geplandAankomen, 14,2);
+			$aankomstMinuut2 = substr($echtAankomen, 14,2);
+			$aankomstUur1 = substr($geplandAankomen, 11,2);
+			$aankomstUur2 = substr($echtAankomen, 11,2);
+
+			$stationNaam = explode('/', $halte->Name)[0];
+			$aankomstPerron = $halte->ArrivalPlatform;
+			$vertrekPerron = $halte->DeparturePlatform;
+
+			if($i == 0){
 				
-				$data = $data . "<tr class='testTr'>";
-				$data = $data . "<th class='testTh'>Halte: " . $result->Stops->Stations[$i]->Name . "</th>";
-				$data = $data . "<td class='testTd'>Perron : " . $result->Stops->Stations[$i]->DeparturePlatform . "</td>";
-				$data = $data . "<td class='testTd'>Tijdstip van aankomst: " . $result->Stops->Stations[$i]->Time->ActualArrival . "</td>";
-				$data = $data . "<td class='testTd'>Tijdstip van vertrek: " . $result->Stops->Stations[$i]->Time->ActualDeparture . "</td>";
-				$data = $data . "</tr>";
-				
-			}
+				$data .=
+				'<div class="stationdeel">
+	              <div class="tussenhalte"><info>' . $stationNaam . '</info></div>
+	              <div class="perron"><info>Perron ' . $vertrekPerron . '</info></div>
+	              <div class="aankomstTijd"><info>';
 
-			$data = $data . "</table>";
+	              if($aankomstUur1 != "00" || $aankomstMinuut1 != "00"){
+	             		$data .= 'Aankomst<br>' . $aankomstUur1 . 'u' . $aankomstMinuut1;
+             	}
+	              $data .= '</info></div><div class="vertrekTijd"><info>Vertrek<br>' . $vertrekUur1 . 'u' . $vertrekMinuut1 . '</info></div>
+	            </div></div>';
+ 		    }
+		 	else if ($i == 1){
+		 		$data .= '<div class="treinStationsCont" id="' . str_replace(' ', '-', $treinId) . 'stations">
+	            <div class="treinStations">
+	            <div class="treinStation">
+	              <div class="tussenhalte"><info>' . $stationNaam . '</info></div>
+	              <div class="perron"><info>Perron ' . $aankomstPerron . '</info></div>
+	              <div class="aankomstTijd"><info>Aankomst<br>' . $aankomstUur1 . 'u' . $aankomstMinuut1 . '</info></div><div class="vertrekTijd"><info>';
+	             
+	             if($vertrekUur1 != "00" || $vertrekMinuut1 != "00"){
+	             	$data .= 'Vertrek<br>' . $vertrekUur1 . 'u' . $vertrekMinuut1;
+	             }
+	             $data .= '</info></div></div>';
+	        }
+	        else{
+	 			$data .=
+				'<div class="treinStation">
+	              <div class="tussenhalte"><info>' . $stationNaam . '</info></div>
+	              <div class="perron"><info>Perron ' . $aankomstPerron . '</info></div>
+	              <div class="aankomstTijd"><info>Aankomst<br>' . $aankomstUur1 . 'u' . $aankomstMinuut1 . '</info></div><div class="vertrekTijd"><info>';
+	             
+	             if($vertrekUur1 != "00" || $vertrekMinuut1 != "00"){
+	             	$data .= 'Vertrek<br>' . $vertrekUur1 . 'u' . $vertrekMinuut1;
+	             }
+	             $data .= '</info></div></div>';
+	        }
+			
 		}
-
-
-		return view('pages.trein-info')->with('data', $data);
+		$data.= '</div></div></div>';
+		return $data;
 	}
 
 	public function getStationInfo(Request $request){
@@ -382,13 +435,7 @@ class InfoController extends Controller {
 			$data.= '</div></div></div>';
 			$l++;
 		}
-
-		$btn = "";
-		if($einde < count($treinen)){
-			$btn .= '<a id="extraTreinenBtn" onclick="getTreinen(1)">Extra treinen laden</a>';
-		}
-		$returnValues = [$data, $btn];
-		return $returnValues;
+		return $data;
 	}
 	public function testDB(){
 		$station = new Station(array(
@@ -396,6 +443,15 @@ class InfoController extends Controller {
 			'naam' => "RobbeDBtest", 
 			'stad' => "Ninove",
 			'active' => 1));
+		
 		$station->save();
+	}
+	public function autofillStation(){
+		$stations = Station::where('active', '1')->get();
+		$stationArray=[];
+		foreach ($stations as $station) {
+			array_push($stationArray,$station->naam);
+		}
+		return $stationArray;
 	}
 }

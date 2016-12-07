@@ -53,3 +53,7 @@
   </div>
 </div>    
 @endsection
+
+@section('scripts')
+  <script src="/js/pages/home.js"></script>
+@endsection
