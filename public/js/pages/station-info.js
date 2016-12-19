@@ -52,5 +52,5 @@ $(document).ready(function(){
   $("#treinTijd").setLocalDatetime();
 
   //Stationlijst genereren
-  autofillStation(["name"]);
+  autoComplete("name");
 });

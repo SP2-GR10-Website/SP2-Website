@@ -309,19 +309,38 @@ a{
 	background-color: rgb(81, 165, 239);
 }
 
-#contact .infoErasmus
-{
+#contact .infoErasmus{
+	position: absolute;
 	float: left;
 }
-#contact #apiGoogle
-{
+#contact #apiGoogle{
 	float:right;
+	border-radius: 30px;
 }
-#contact .formCss 
-{
+#contact .formCss{
 	float: left;
+	position: relative;
 }
-#contact .ontwikkelaars 
-{
+
+#contact .adres{
+	float:left;
+	position: relative;
+}
+#contact .labelContact{
+	float:left;
+}
+#contact .inputContact{
+	padding-left: 100px;
+	padding-bottom: 20px;
+}
+#conact .ontwikkelaars{
 	float: right;
+	position: relative;
+}
+#contact .headOntwik{
+	padding-left: 50px;
+}		
+#contact .ontwikkelaarsText{
+	margin-left: auto;
+	text-align: center;
 }

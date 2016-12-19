@@ -228,7 +228,7 @@ class InfoController extends Controller {
 		$data.= ("</br>");
 		$data.= ("</li>");
 		$data.= ("</ul>");
-		return view('pages.route-info')->with('data', $data);
+		return $data;
 	}
 
 public function getTreinInfo(Request $request){

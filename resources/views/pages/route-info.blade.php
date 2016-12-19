@@ -7,11 +7,11 @@
     <div class="linkerdeel col-lg-3">
       <div class="col-lg-10 col-lg-offset-1">
        <form>
-            <label for="vertrek">Vertrek:</label>
-            <select id="stepOn"></select>
+            <label for="stepOn">Vertrek:</label>
+              <input id="stepOn" onclick="autoComplete('stepOn')">
             <br>
-             <label for="aankomst">Aankomst:</label>
-            <select id="stepOff"></select>
+             <label for="stepOff">Aankomst:</label>
+            <input id="stepOff" onclick="autoComplete('stepOff')">
             <br>
             <label for="treinTijd">Tijdstip:</label>
             <input class="form-control" name="treinTijd" type="datetime-local" id="treinTijd">

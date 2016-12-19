@@ -10,7 +10,7 @@
       type: 'GET',
       data: { 'stepOn': stepOn,'stepOff': stepOff, 'treinTijd': treinTijd},
       success: function(data){
-        $("#rechterdeelId").html(data[0]);           
+        $("#rechterdeelId").html(data);           
       }
     });
 }
@@ -18,7 +18,7 @@ $(document).ready(function(){
 
   //Lokale datum instellen
   $("#treinTijd").setLocalDatetime();
-
   //Stationlijst genereren
-  autofillStation(["stepOn", "stepOff"]);
+  autoComplete("stepOn");
+  autoComplete("stepOff");
 });

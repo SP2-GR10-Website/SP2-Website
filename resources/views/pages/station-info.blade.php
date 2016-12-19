@@ -11,7 +11,7 @@
       <div>
          <form>
             <label for="name">Station:</label>
-            <select id="name"></select>
+             <input id="name">
             <br>
             <label for="treinTijd">Tijdstip:</label>
             <input class="form-control" name="treinTijd" type="datetime-local" id="treinTijd">
