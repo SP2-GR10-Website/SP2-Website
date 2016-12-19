@@ -33,7 +33,7 @@
   <div class="formCss">
        
         <h2>Contacteer ons</h2>
-  <form id="contactUs">
+  <form id="contactUs" method="post">
      <div class="labelContact">
         <label for="name">Naam:</label>
      </div>

@@ -29,6 +29,7 @@ Route::group(['prefix' => 'tarieven'], function () {
 });
 
 Route::get('/autofillStation','InfoController@autofillStation');
+Route::get('/stuurMail','InfoController@stuurMail');
 
 Route::get('/testDB', 'InfoController@testDB');
 

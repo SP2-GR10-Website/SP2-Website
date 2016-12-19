@@ -73,5 +73,7 @@ function IsEmpty(){
     if(emailChecker == true){
 
       alert("Email is goed verzonden, bedankt!");
+      sendMail();
     }
   }
+

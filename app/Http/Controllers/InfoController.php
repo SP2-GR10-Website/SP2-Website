@@ -454,4 +454,14 @@ public function getTreinInfo(Request $request){
 		}
 		return $stationArray;
 	}
-}
+	public function stuurMail(Request $request){
+		$msg = "";
+		$naam = $request->naam;
+		$bericht =$request->bericht;
+		$email = $request->bericht;
+		$msg += $naam + " ";
+		$msg += $bericht + " ";
+		$msg += $email + " ";
+
+		mail("imswiitch@gmail.com","Contact formulier NMBS-website",$msg);
+}}
