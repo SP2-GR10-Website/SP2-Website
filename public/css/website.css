@@ -319,12 +319,12 @@ a{
 }
 #contact .formCss{
 	float: left;
-	position: relative;
+	position:relative;
 }
 
 #contact .adres{
 	float:left;
-	position: relative;
+	position: absolute;
 }
 #contact .labelContact{
 	float:left;
@@ -335,7 +335,6 @@ a{
 }
 #conact .ontwikkelaars{
 	float: right;
-	position: relative;
 }
 #contact .headOntwik{
 	padding-left: 50px;
@@ -343,4 +342,25 @@ a{
 #contact .ontwikkelaarsText{
 	margin-left: auto;
 	text-align: center;
+	line-height: 20px;
+}
+#ui-id-1{
+ background: white !important;
+ width: 175px !important;
+ margin-left: -20px !important;
+ border-radius: 2px !important;
+ border-style: solid !important;
+}
+#ui-id-2{
+background: white !important;
+ width: 175px !important;
+ margin-left: -20px !important;
+ border-radius: 2px !important;
+ border-style: solid !important;
+}
+.ui-menu-item{
+    width: auto !important;
+    list-style: none !important;
+    margin-left: -40px !important;
+
 }
