@@ -1,0 +1,574 @@
+a{
+ 	text-decoration: none;
+ 	color: black;
+ }
+  a:hover{
+ 	text-decoration: none;
+ 	color: black;
+ }
+#navItems{
+	margin: auto;
+}
+clearfix{
+	display: block;
+	clear:both;
+}
+.blauweLink{
+ 	color: #6BB0FF;
+ }
+.blauweLink:hover{
+	color: #6BB0FF;
+ 	text-decoration: underline;
+ }
+.linkerdeel{
+ 	float: left;
+ 	padding-left: 3vw;
+ 	width: 20vw;
+ }
+.rechterdeel{
+	height: 100%;
+	position: relative;
+	padding: 0vw 3vw 0vw 3vw;
+	float: left;
+	width: calc(79.5vw - 17px);
+}
+.maincontent{
+	padding-bottom: 50px
+	height: auto;
+}
+
+/*FOOTER*/
+.footer{
+	border-top: 3px solid rgb(200, 200, 200);
+	padding: 20px 0px 40px 0px;
+	width: 100%;
+	height: auto;
+	color: rgb(170, 170, 170);
+	background-color: rgb(247, 247, 247);
+	overflow: auto;
+}
+.footer .footerparts{
+	width: 100%;
+	height: auto;
+	overflow: auto;
+	margin-bottom: 30px;
+}
+.footer .footerpart{
+	width: 20%;
+	float: left;
+	text-align: justify;
+}
+.footer .footerpart:first-child{
+	margin-left: 25%;
+}
+.footer .footerpart:last-child{
+	margin-left: 10%;
+}
+.footer .footerpart titel{
+	font-size: 18px;
+	display: block;
+	padding: 0;
+	margin: 0;
+	width: 100%; 
+	color: rgb(125, 125, 125);
+	text-align: center;
+}
+.footer .footerimgs{
+	width: 100%;
+	height: 8vw;
+}
+.footer .footerimg{
+	filter: grayscale(100%) brightness(200%);
+	float: left;
+	width: 27%;
+	height: 100%;
+	margin-left: 4.75%;
+	background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+    transition: all .5s ease-in 0s, background-image .1s ease-in 0s, width 5s ease-in 0s;
+}
+.footer .footerimg:hover{
+	filter: none;
+}
+.footer #ehb{
+	background-image: url('../images/ehb-logo.png');
+}
+.footer #nmbs{
+	background-image: url('../images/nmbs-logo.png');
+}
+.footer #mcafee{
+	background-image: url('../images/mcafee-logo.png');
+}
+
+
+ /*HOMEPAGE*/
+}
+#home .homeWell{
+	transition: background-color 0.2s ease-in 0s;
+ }
+#home .homeWell:hover{
+	background-color: rgb(219, 219, 219);
+ }
+#home .customContainer{
+ 	padding: 0;
+ 	overflow-x: hidden;
+ }
+#home .zoekBtn{
+  	margin-top: 15px;
+ }
+
+/*ERROR PAGE*/
+#error .errorlink{
+ 	color: #198CFF;
+ }
+#error .errorlink:hover{
+  	color: #198CFF;
+ 	text-decoration: underline;
+ }
+#error .errorsmiley{
+ 	font-family: Tahoma;
+ 	font-size: 20vh;
+ }
+#error .errormessage{
+ 	font-size: 20px;
+ }
+
+/*STATION INFO*/
+#station-info  #treinen{
+	width: 60vw;
+	margin-left: auto;
+	margin-right: auto;
+}
+#station-info  .trein{
+	margin-bottom: 3vh;
+}
+#station-info  info{
+	font-family: Tahoma;
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+#station-info  .treinInfo{
+	display: table;
+	height: 5vh;
+	width: 60vw;
+	background-color: rgb(226, 226, 226);
+}
+#station-info  .infodeel{
+	display: table-cell;
+	vertical-align: middle;
+	width: 40%;
+}
+#trein-info  .stationdeel{
+	display: table-cell;
+	vertical-align: middle;
+}
+#station-info  .pijltje{
+	margin: 0px 20px 0px 20px;
+}
+#station-info  .nummerContainer{
+	display: table-cell;
+	vertical-align: middle;
+	color: white;
+	text-align: center;
+	width: 7vw;
+	height: 5vh;
+	box-shadow: inset -2px 0px 0px 0px white;
+	font-size: 2vh;
+}
+#station-info .begin-eind{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 17vw;
+	font-size: 1.5vh;
+	box-shadow: inset -2px 0px 0px 0px white;
+}
+#station-info .stationdeel{
+	text-align: center;
+}
+
+#station-info .tussenhalte{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 2vh;
+	width: 10vw;
+}
+#station-info .perron{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 1.6vh;
+	width: 10vw;
+}
+#station-info .aankomstTijd{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 1.7vh;
+	width: 7vw;
+}
+#station-info .vertrekTijd{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 1.7vh;
+	width: 7vw;
+}
+#station-info .meerStations{
+	display: table-cell;
+	vertical-align: middle;
+	cursor: pointer;
+	padding: 0 0.5vw 0 0.5vw;
+}
+#station-info .meerStationsIMG{
+	width: 1vw;
+	height: 1vw;
+	
+	background-image: url('../images/expand.png');
+	background-size: 1vw 1vw;
+}
+#station-info .treinStationsCont{
+	display: none;
+}
+#station-info .treinStations{
+	display: table;
+	text-align:center;
+}
+#station-info .treinStation{
+	width: 36vw;
+	margin: 2px 0px 2px 24vw;
+	display: block;
+	min-height: 5vh;
+	background-color: rgb(226, 226, 226);
+}
+#station-info #extraTreinenBtn{
+	cursor: pointer;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	line-height: 4vh;
+	width: 30vw;
+	height: 4vh;
+	background-color: rgb(134, 192, 242);
+	font-family: Helvetica;
+	font-size: 2vh;
+	color: white;
+	transition: all 0.1s ease-in 0s;
+	border-radius: 5px;
+	box-shadow: 30px;
+	position: relative;
+}
+#station-info #extraTreinenBtn:hover{
+	color: white;
+	background-color: rgb(81, 165, 239);
+}
+
+/*TREIN INFO*/
+#trein-info  #treinen{
+	width: 60vw;
+	margin-left: auto;
+	margin-right: auto;
+}
+#trein-info  .trein{
+	margin-bottom: 3vh;
+}
+#trein-info  info{
+	font-family: Tahoma;
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+#trein-info  .treinInfo{
+	display: table;
+	height: 5vh;
+	width: 60vw;
+	background-color: rgb(226, 226, 226);
+}
+#trein-info  .infodeel{
+	display: table-cell;
+	vertical-align: middle;
+	width: 40%;
+}
+#trein-info  .stationdeel{
+	display: table-cell;
+	vertical-align: middle;
+}
+#trein-info  .pijltje{
+	margin: 0px 20px 0px 20px;
+}
+#trein-info  .nummerContainer{
+	display: table-cell;
+	vertical-align: middle;
+	color: white;
+	text-align: center;
+	width: 7vw;
+	height: 5vh;
+	box-shadow: inset -2px 0px 0px 0px white;
+	font-size: 2vh;
+}
+#trein-info .begin-eind{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 17vw;
+	font-size: 1.5vh;
+	box-shadow: inset -2px 0px 0px 0px white;
+}
+#trein-info .stationdeel{
+	text-align: center;
+}
+
+#trein-info .tussenhalte{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 2vh;
+	width: 10vw;
+}
+#trein-info .perron{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 1.6vh;
+	width: 10vw;
+}
+#trein-info .aankomstTijd{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 1.7vh;
+	width: 7vw;
+}
+#trein-info .vertrekTijd{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 1.7vh;
+	width: 7vw;
+}
+#trein-info .treinStationsCont{
+	display: block;
+}
+#trein-info .treinStations{
+	display: table;
+	text-align:center;
+}
+#trein-info .treinStation{
+	width: 36vw;
+	margin: 2px 0px 2px 24vw;
+	display: block;
+	min-height: 5vh;
+	background-color: rgb(226, 226, 226);
+}
+#trein-info #extraTreinenBtn{
+	cursor: pointer;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	line-height: 4vh;
+	width: 30vw;
+	height: 4vh;
+	background-color: rgb(134, 192, 242);
+	font-family: Helvetica;
+	font-size: 2vh;
+	color: white;
+	transition: all 0.1s ease-in 0s;
+	border-radius: 5px;
+	box-shadow: 30px;
+	position: relative;
+}
+#trein-info #extraTreinenBtn:hover{
+	color: white;
+	background-color: rgb(81, 165, 239);
+}
+
+/*ROUTE-INFO*/
+#route-info  .route{
+	width: 90%;
+	margin-left: 5%;
+	margin-bottom: 30px;
+	-webkit-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.12);
+	-moz-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.12);
+	box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.12);
+}
+#route-info  .routeInfo{
+	position: relative;
+	height: 65px;
+	background-color: rgb(226, 226, 226);
+}
+#route-info  .routeInfo-vertrek{
+	font-family: Helvetica;
+	font-size: 1.4vw;
+	position: absolute;
+	top: 50%;
+	left: 3%;
+    transform: translateY(-50%);
+}
+#route-info  .routeInfo-vertrek-info{
+	font-family: Helvetica;
+	font-size: 1.1vw;
+	position: absolute;
+	top: 50%;
+	left: 17%;
+    transform: translateY(-50%);
+}
+#route-info .routeInfo-pijltje{
+	position: absolute;
+	transform: translateY(-50%);
+	top: 50%;
+	height: 1vw;
+	width: 2.5vw;
+	background-image: url('/images/arrow-right.png');
+	background-size: 2.5vw 1vw;
+	background-repeat: no-repeat;
+	left: 28%;
+}
+#route-info  .routeInfo-aankomst{
+	font-family: Helvetica;
+	font-size: 1.4vw;
+	position: absolute;
+	top: 50%;
+	left: 35%;
+    transform: translateY(-50%);
+}
+#route-info  .routeInfo-aankomst-info{
+	font-family: Helvetica;
+	font-size: 1.1vw;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    transform: translateY(-50%);
+}
+#route-info .routeInfo-duration{
+	position: absolute;
+	transform: translateY(-50%);
+	top: 50%;
+	left: 65%;
+	font-family: Helvetica;
+	font-size: 1.1vw;
+	text-align: center;
+}
+#route-info .routeInfo-overstappen{
+	position: absolute;
+	transform: translateY(-50%);
+	top: 50%;
+	right: calc(65px + 2%);
+	font-family: Helvetica;
+	font-size: 1.1vw;
+	text-align: center;
+}
+#route-info .routeInfo-dropdown{
+	position: relative;
+	float: right;
+	height: 100%;
+	width: 65px;
+	transition: background-color 0.07s ease-in 0s;
+}
+#route-info .routeInfo-dropdown-img{
+	position: absolute;
+	transform: translateY(-50%) translateX(-50%);;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	background-image: url('/images/expand.png');
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+}
+#route-info .routeInfo-dropdown:hover{
+	cursor: pointer;
+	background-color: rgb(186, 186, 186);
+}
+#route-info .overstappen{
+	display: none;
+	position: relative;
+	width: 100%;
+	height: auto;
+	background-color: rgb(247, 247, 247);
+}
+#route-info .overstap{
+	width: 100%;
+	height: calc(80px + 5vw);
+}
+#route-info .overstap-cel{
+	padding: 5px;
+	width: calc(100% / 3);
+	height: 100%;
+	float: left;
+	box-sizing: border-box;
+	position: relative;
+}
+#route-info .overstap-cel-midden{
+	border-left: 2px solid white;
+	border-right: 2px solid white;
+}
+#route-info .overstap:first-child{
+	border-bottom: 2px solid white;
+}
+#route-info .overstap-halte{
+	font-size: 1.5vw;
+	position: absolute;
+	transform: translateY(-50%) translateX(-50%);
+	top: 50%;
+	left: 50%;
+}
+#route-info .overstap-titel{
+	width: 100%;
+	text-align: center;
+	font-size: 1.3vw;
+
+}
+#route-info .overstap-info{
+	font-size: 1.1vw;
+	margin-left: 20px;
+	margin-top: 1vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#contact .infoErasmus
+{
+	float: left;
+}
+#contact #apiGoogle
+{
+	float:right;
+}
+#contact .formCss 
+{
+	float: left;
+}
+#contact .ontwikkelaars 
+{
+	float: right;
+}
