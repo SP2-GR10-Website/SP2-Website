@@ -364,3 +364,144 @@ background: white !important;
     margin-left: -40px !important;
 
 }
+/*ROUTE-INFO*/
+#route-info  .route{
+	width: 90%;
+	margin-left: 5%;
+	margin-bottom: 30px;
+	-webkit-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.12);
+	-moz-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.12);
+	box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.12);
+}
+#route-info  .routeInfo{
+	position: relative;
+	height: 65px;
+	background-color: rgb(226, 226, 226);
+}
+#route-info  .routeInfo-vertrek{
+	font-family: Helvetica;
+	font-size: 1.4vw;
+	position: absolute;
+	top: 50%;
+	left: 3%;
+    transform: translateY(-50%);
+}
+#route-info  .routeInfo-vertrek-info{
+	font-family: Helvetica;
+	font-size: 1.1vw;
+	position: absolute;
+	top: 50%;
+	left: 17%;
+    transform: translateY(-50%);
+}
+#route-info .routeInfo-pijltje{
+	position: absolute;
+	transform: translateY(-50%);
+	top: 50%;
+	height: 1vw;
+	width: 2.5vw;
+	background-image: url('/images/arrow-right.png');
+	background-size: 2.5vw 1vw;
+	background-repeat: no-repeat;
+	left: 28%;
+}
+#route-info  .routeInfo-aankomst{
+	font-family: Helvetica;
+	font-size: 1.4vw;
+	position: absolute;
+	top: 50%;
+	left: 35%;
+    transform: translateY(-50%);
+}
+#route-info  .routeInfo-aankomst-info{
+	font-family: Helvetica;
+	font-size: 1.1vw;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    transform: translateY(-50%);
+}
+#route-info .routeInfo-duration{
+	position: absolute;
+	transform: translateY(-50%);
+	top: 50%;
+	left: 65%;
+	font-family: Helvetica;
+	font-size: 1.1vw;
+	text-align: center;
+}
+#route-info .routeInfo-overstappen{
+	position: absolute;
+	transform: translateY(-50%);
+	top: 50%;
+	right: calc(65px + 2%);
+	font-family: Helvetica;
+	font-size: 1.1vw;
+	text-align: center;
+}
+#route-info .routeInfo-dropdown{
+	position: relative;
+	float: right;
+	height: 100%;
+	width: 65px;
+	transition: background-color 0.07s ease-in 0s;
+}
+#route-info .routeInfo-dropdown-img{
+	position: absolute;
+	transform: translateY(-50%) translateX(-50%);;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	background-image: url('/images/expand.png');
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+}
+#route-info .routeInfo-dropdown:hover{
+	cursor: pointer;
+	background-color: rgb(186, 186, 186);
+}
+#route-info .overstappen{
+	display: none;
+	position: relative;
+	width: 100%;
+	height: auto;
+	background-color: rgb(247, 247, 247);
+}
+#route-info .overstap{
+	width: 100%;
+	height: calc(80px + 5vw);
+}
+#route-info .overstap-cel{
+	padding: 5px;
+	width: calc(100% / 3);
+	height: 100%;
+	float: left;
+	box-sizing: border-box;
+	position: relative;
+}
+#route-info .overstap-cel-midden{
+	border-left: 2px solid white;
+	border-right: 2px solid white;
+}
+#route-info .overstap:first-child{
+	border-bottom: 2px solid white;
+}
+#route-info .overstap-halte{
+	font-size: 1.5vw;
+	position: absolute;
+	transform: translateY(-50%) translateX(-50%);
+	top: 50%;
+	left: 50%;
+}
+#route-info .overstap-titel{
+	width: 100%;
+	text-align: center;
+	font-size: 1.3vw;
+
+}
+#route-info .overstap-info{
+	font-size: 1.1vw;
+	margin-left: 20px;
+	margin-top: 1vw;
+}

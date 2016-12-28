@@ -2,10 +2,8 @@
 @section('title', 'Route-info')
 @section('activePageRoute', 'active')
 @section('content')
-<div class="container-fluid" id="route-info">
-  <div class="row">
-    <div class="linkerdeel col-lg-3">
-      <div class="col-lg-10 col-lg-offset-1">
+<div class="maincontent" id="route-info">
+  <div class="linkerdeel">
        <form>
             <label for="stepOn">Vertrek:</label>
               <input id="stepOn" onclick="autoComplete('stepOn')">
@@ -20,7 +18,9 @@
       </div>
     </div>
     <div class="rechterdeel" id="rechterdeelId">
+     <div id="routeCont">
 
+     </div>
     </div>
   </div>
 </div>
