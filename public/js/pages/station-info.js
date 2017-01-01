@@ -28,7 +28,15 @@ function getStation(actie="initialise"){
       }
       
       mijnAantalStationRequests++;
+    },
+    error: function(){
+      var tekst = '<div class="jumbotron" style="background-color:white">'
+          + '<h1 class="text-center">:(</h1>'
+          + '<p class="text-center">Er is iets misgegaan, onze oprechte excuses hiervoor.</p>'
+          + '</div>';
+      $("#rechterdeelId").html(tekst);
     }
+
   });
 }
 
@@ -52,5 +60,5 @@ $(document).ready(function(){
   $("#treinTijd").setLocalDatetime();
 
   //Stationlijst genereren
-  autofillStation(["name"]);
+  autoComplete("name");
 });

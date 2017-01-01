@@ -5,7 +5,7 @@
 @section('activePageHome', 'active')
 
 @section('content')
-<div class="maincontent">
+<div>
   <div class="jumbotron" style="background-color:white">
    <h1 class="text-center">Welkom</h1>
    <p class="text-center">bij deftigeNMBS.be</p>
@@ -52,8 +52,4 @@
     </a>
   </div>
 </div>    
-@endsection
-
-@section('scripts')
-  <script src="/js/pages/home.js"></script>
 @endsection

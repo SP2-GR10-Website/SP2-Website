@@ -3,22 +3,23 @@
 @section('activePageRoute', 'active')
 @section('content')
 <div class="maincontent" id="route-info">
+    <div id="linkerdeel-hamburger" onclick="toonLinkerdeel()"></div>
     <div class="linkerdeel">
        <form>
-            <label for="vertrek">Vertrek:</label>
-            <select id="stepOn"></select>
+            <label class="linkerdeel-label" for="stepOn">Vertrek</label>
+              <input class="linkerdeel-input" id="stepOn" onclick="autoComplete('stepOn')">
             <br>
-             <label for="aankomst">Aankomst:</label>
-            <select id="stepOff"></select>
+             <label class="linkerdeel-label" for="stepOff">Aankomst</label>
+            <input class="linkerdeel-input" id="stepOff" onclick="autoComplete('stepOff')">
             <br>
-            <label for="treinTijd">Tijdstip:</label>
-            <input class="form-control" name="treinTijd" type="datetime-local" id="treinTijd">
+            <label class="linkerdeel-label" for="treinTijd">Tijdstip</label>
+            <input class="form-control linkerdeel-input" name="treinTijd" type="datetime-local" id="treinTijd">
         </form>
-         <div class="btn btn-success zoekBtn btn-block" onclick="getRoute()"> Zoek</div>
+         <div class="linkerdeel-submit" onclick="getRoute()"> Zoek</div>
     </div>
     <div class="rechterdeel" id="rechterdeelId">
         <div id="routeCont">
-        <div class="route">
+        <!-- <div class="route">
             <div class="routeInfo">
               <div class="routeInfo-vertrek">Vilvoorde</div>
               <div class="routeInfo-vertrek-info">
@@ -70,9 +71,9 @@
                   <div class="overstap-info">Perron: 69</div>
                 </div>
               </div>
-
+        
             </div>
-          </div>
+          </div> -->
         </div>
     </div>
 </div>

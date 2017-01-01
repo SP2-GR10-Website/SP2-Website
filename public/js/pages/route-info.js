@@ -11,6 +11,13 @@
       data: { 'stepOn': "Vilvoorde",'stepOff': "Oostende", 'treinTijd': treinTijd},
       success: function(data){
         $("#rechterdeelId").html(data);           
+      },
+      error: function(){
+        var tekst = '<div class="jumbotron" style="background-color:white">'
+            + '<h1 class="text-center">:(</h1>'
+            + '<p class="text-center">Er is iets misgegaan, onze oprechte excuses hiervoor.</p>'
+            + '</div>';
+        $("#rechterdeelId").html(tekst);
       }
     });
 }
@@ -21,7 +28,8 @@ $(document).ready(function(){
 
 
 
-  $(".routeInfo-dropdown").click(function(){
+  $(document).on("click", ".routeInfo-dropdown", function(){
+    console.log("olee");
     $el = $(this).parent().parent().find(".overstappen");
     if($el.css("display") == "none"){
       $el.show(50);
@@ -34,5 +42,6 @@ $(document).ready(function(){
   });
 
   //Stationlijst genereren
-  autofillStation(["stepOn", "stepOff"]);
+  autoComplete("stepOn");
+  autoComplete("stepOff");
 });

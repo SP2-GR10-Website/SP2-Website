@@ -6,13 +6,14 @@
 
 @section('content')
 <div class="maincontent" id="trein-info">
+    <div id="linkerdeel-hamburger" onclick="toonLinkerdeel()"></div>
     <div class="linkerdeel">
       <div>
         <form>
-            <label for="name">Trein ID:</label>
-            <input class="form-control" type="text" id="treinId">
+            <label class="linkerdeel-label" for="name">Trein ID</label>
+            <input class="form-control linkerdeel-input" type="text" id="treinId">
         </form>
-        <div class="btn btn-success zoekBtn btn-block" onclick="getTrein()">Zoek</div>
+        <div class="linkerdeel-submit" onclick="getTrein()">Zoek</div>
       </div>
     </div>
 

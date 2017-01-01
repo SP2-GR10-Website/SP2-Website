@@ -6,16 +6,17 @@
 
 @section('content')
 <div class="maincontent" id="station-info">
+    <div id="linkerdeel-hamburger" onclick="toonLinkerdeel()"></div>
     <div class="linkerdeel">
       <div>
          <form>
-            <label for="name">Station:</label>
-            <select id="name"></select>
+            <label class="linkerdeel-label" for="name">Station</label>
+             <input class="linkerdeel-input" id="name">
             <br>
-            <label for="treinTijd">Tijdstip:</label>
-            <input class="form-control" name="treinTijd" type="datetime-local" id="treinTijd">
+            <label class="linkerdeel-label" for="treinTijd">Tijdstip</label>
+            <input class="form-control linkerdeel-input" name="treinTijd" type="datetime-local" id="treinTijd">
         </form>
-       <div class="btn btn-success zoekBtn btn-block" onclick="getStation('initialise')">Zoek</div>
+       <div class="linkerdeel-submit" onclick="getStation('initialise')">Zoek</div>
       </div>
     </div>
     <div class="rechterdeel" id="rechterdeelId">

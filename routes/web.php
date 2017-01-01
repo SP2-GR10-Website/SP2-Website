@@ -21,6 +21,7 @@ Route::group(['prefix' => 'station-info'], function () {
 //Contact
 Route::group(['prefix' => 'contact'], function () {
 	Route::get('/', 'PagesController@getContact');
+	Route::get('/stuurMail','InfoController@stuurMail');
 });
 
 Route::get('/autofillStation','InfoController@autofillStation');

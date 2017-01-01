@@ -1,3 +1,6 @@
+// CREDIT: http://spin.js.org/
+
+
 ;(function(root, factory) {
   if (typeof module == 'object' && module.exports) module.exports = factory(); // CommonJS
   else if (typeof define == 'function' && define.amd) define(factory); // AMD module

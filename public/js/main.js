@@ -32,9 +32,8 @@ jQuery.fn.extend({
             position: 'absolute'  // Element positioning
         };
 
-        $(this).html("<div id='ajaxSpinner'></div>");
-        var target = document.getElementById("ajaxSpinner");
-        var spinner = new Spinner(opts).spin(target);
+        $(this).html("<div class='ajaxSpinner'></div>");
+        var spinner = new Spinner(opts).spin($(".ajaxSpinner")[0]);
         
         //Wanneer ajax klaar is
        if(vervang == "replace"){
@@ -51,19 +50,51 @@ jQuery.fn.extend({
     }
 });
 
-function autofillStation(elementen, classname=""){
-    $.ajax({
-      url:'/autofillStation',
-      type:'GET',
-      data:'',
-      success:function(data){
-        $options = "";
-        for(i = 0 ; i < data.length ; i++){ 
-          $options += "<option value ='" + data[i] + "' class='" + classname + "'>" + data[i] + "</option>";
+function autoComplete(element) {
+  $.ajax({
+    url:'/autofillStation',
+    type:'GET',
+    data:'',
+    success:function(data){
+      $availableTags = [];
+      if(element == "stepOn" || element == "stepOff"){
+      $opstapStation = document.getElementById("stepOn").value;
+      $afstapStation = document.getElementById('stepOff').value;
+    }
+      for(i = 0;i<data.length ; i++){
+        if(element == "name"){
+         $availableTags.push(data[i]); 
         }
-        for(i = 0; i < elementen.length; i++){
-            $("#" + elementen[i]).html($options);
+        if(element == "stepOn"){
+          if($afstapStation == null){
+          $availableTags.push(data[i]); 
+        }
+        else if($afstapStation != data[i])
+        {
+           $availableTags.push(data[i]);
+        }
+      }  
+      else if(element =="stepOff"){
+         if(data[i] != $opstapStation)
+         {
+          $availableTags.push(data[i]);
         }
       }
+    }
+  $("#" + element).autocomplete({
+
+      source: $availableTags
     });
+    }
+  } )
+};
+function toonLinkerdeel(){
+  $(".linkerdeel").toggle("slide");
+  if($("#linkerdeel-hamburger").css("left") == "10px"){
+    $("#linkerdeel-hamburger").css("left", "215px");
+  }
+  else{
+    $("#linkerdeel-hamburger").css("left", "10px");
+  }
 }
+
